@@ -13,7 +13,6 @@ class TaskListEloquent extends Model implements TaskListRepository
 {
     protected $table = 'task_lists';
 
-
     public function findById(int $id): TaskList
     {
         $eloquent = $this->find($id);

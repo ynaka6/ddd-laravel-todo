@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Package\Task\Application\OutputData;
 
-use Package\Task\Application\OutputData\TaskList;
-
 class GetListOutputData
 {
     private $taskList;
@@ -30,7 +28,7 @@ class GetListOutputData
 
     public function selectedTaskList(): TaskList
     {
-        return array_filter($this->taskList, function($list) {
+        return array_filter($this->taskList, function ($list) {
             return $list->isSelected();
         })[0];
     }

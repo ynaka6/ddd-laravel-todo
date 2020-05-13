@@ -41,5 +41,4 @@ class TaskList
     {
         return $this->isSelected ? 'true' : 'false';
     }
-
 }

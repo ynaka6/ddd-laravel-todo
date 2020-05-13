@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Package\Task\Application\Interactor;
 
 use Package\Task\Application\InputData\GetUserTasksInputData;
+use Package\Task\Application\OutputData\GetListOutputData;
 use Package\Task\Application\OutputData\Task as TaskDto;
 use Package\Task\Application\OutputData\TaskList as TaskListDto;
-use Package\Task\Application\OutputData\GetListOutputData;
 use Package\Task\Application\UseCase\GetUserTasksUseCase;
 use Package\Task\Domain\Entity\TaskList;
 use Package\Task\Domain\Repository\TaskListRepository;
@@ -35,7 +35,7 @@ class GetUserTasksInteractor implements GetUserTasksUseCase
     public function handle(GetUserTasksInputData $inputData): GetListOutputData
     {
         $taskList = $this->getTaskListByUserId($inputData->userId());
-        $selectedTaskList = array_filter($taskList, function($list) {
+        $selectedTaskList = array_filter($taskList, function ($list) {
             return $list->isSelected();
         })[0];
 
@@ -46,7 +46,7 @@ class GetUserTasksInteractor implements GetUserTasksUseCase
                 $entity->isSelected(),
             );
         }, $taskList);
-        
+
         $tasks = array_map(function ($entity) {
             return new TaskDto(
                 $entity->id(),
@@ -59,10 +59,10 @@ class GetUserTasksInteractor implements GetUserTasksUseCase
         return new GetListOutputData($taskList, $tasks);
     }
 
-
     protected function getTaskListByUserId(int $userId): array
     {
         $taskList = $this->taskListRepository->findByUserId($userId);
+
         if (empty($taskList)) {
             $taskList[] = $this->taskListRepository->createTaskList(TaskList::new(
                 $userId,

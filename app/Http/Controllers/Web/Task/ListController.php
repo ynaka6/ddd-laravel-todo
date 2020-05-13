@@ -5,10 +5,8 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Web\Task;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Web\Task\MyTasksRequest;
 use App\Http\ViewModels\Web\ListFormViewModel;
 use Illuminate\View\View;
-use Package\Task\Application\UseCase\GetUserTasksUseCase;
 
 class ListController extends Controller
 {

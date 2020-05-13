@@ -4,16 +4,13 @@ declare(strict_types=1);
 
 namespace App\Http\ViewModels\Web;
 
-
 class ListFormViewModel
 {
-
     private $title;
 
     private $namePlaceholder;
 
     private $nameValue;
-
 
     public function __construct(
         string $title,
@@ -39,6 +36,4 @@ class ListFormViewModel
     {
         return $this->nameValue;
     }
-    
-
 }

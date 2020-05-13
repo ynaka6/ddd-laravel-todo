@@ -91,9 +91,11 @@ class TaskEloquent extends Model implements TaskRepository
         if (empty($task->id())) {
             throw new \Exception();
         }
+
         if (empty($task->userId())) {
             throw new \Exception();
         }
+
         if (empty($task->listId())) {
             throw new \Exception();
         }

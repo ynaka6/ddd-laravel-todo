@@ -33,8 +33,9 @@ class TaskList extends Entity
 
     /**
      * 新規登録に利用する.
-     * @param int              $userId
-     * @param TaskListName         $name
+     * @param int          $userId
+     * @param TaskListName $name
+     * @param bool         $isSelected
      */
     public static function new(int $userId, TaskListName $name, bool $isSelected)
     {
@@ -47,8 +48,8 @@ class TaskList extends Entity
      * 検索した結果を登録する際に利用する.
      * @param int              $id
      * @param int              $userId
-     * @param TaskListName         $name
-     * @param bool         $isSelected
+     * @param TaskListName     $name
+     * @param bool             $isSelected
      * @param ?CarbonImmutable $createdAt
      * @param ?CarbonImmutable $updatedAt
      */
