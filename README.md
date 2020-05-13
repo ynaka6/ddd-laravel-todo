@@ -20,4 +20,4 @@ https://github.com/tailwindcss/tailwindcss
 - [実装から学ぶクリーンアーキテクチャ](https://gist.github.com/mpppk/609d592f25cab9312654b39f1b357c60)
 
 ## License
-"ddd-laravel-todo" [MIT license](https://opensource.org/licenses/MIT).
+"ddd-laravel-todo" is under [MIT license](https://opensource.org/licenses/MIT).
